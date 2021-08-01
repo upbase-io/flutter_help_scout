@@ -60,8 +60,10 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     user.name = name
 
     let attributes = arguments["attributes"] as? Dictionary<String, Any>
-    for(key, value) in attributes {
-      user.addAttribute(withKey: key, value: value)
+    if(let userAttributes = attributes) {
+          for (key, value) in attributes {
+              user.addAttribute(withKey: key, value: value)
+          }
     }
 
     HSBeacon.login(user)
