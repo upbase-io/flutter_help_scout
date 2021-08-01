@@ -15,7 +15,7 @@ class FlutterHelpScout {
   /// This is the user's email address
   final String email;
 
-  final Map<String, dynamic> attributes;
+  final Map<String, String> attributes;
 
   FlutterHelpScout({this.email = '', this.name = '', @required this.beaconId, this.attributes = const {}});
 
