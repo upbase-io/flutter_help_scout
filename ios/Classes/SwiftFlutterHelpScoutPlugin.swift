@@ -54,10 +54,12 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
         
     let email = arguments["email"] as? String
     let name = arguments["name"] as? String
+    let avatar = arguments["avatar"] as? URL
         
     let user = HSBeaconUser()
     user.email = email
     user.name = name
+    user.avatar = avatar;
 
     let attributes = arguments["attributes"] as? Dictionary<String, String>
     if attributes != nil {
@@ -66,7 +68,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
           }
     }
 
-    HSBeacon.login(user)
+    HSBeacon.identify(user)
  }
 
     // open the beacon
@@ -75,6 +77,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     settings.messagingEnabled = true
     settings.chatEnabled = true
     HSBeacon.open(settings)
+    HSBeacon.navigate(BeaconRoute.askChat, settings: settings)
   }
 
   // logout beacon

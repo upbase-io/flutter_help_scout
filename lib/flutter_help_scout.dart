@@ -15,13 +15,15 @@ class FlutterHelpScout {
   /// This is the user's email address
   final String email;
 
+  final String avatar;
+
   final Map<String, String> attributes;
 
-  FlutterHelpScout({this.email = '', this.name = '', @required this.beaconId, this.attributes = const {}});
+  FlutterHelpScout({this.email = '', this.name = '', @required this.beaconId, this.avatar, this.attributes = const {}});
 
   /// This method will initialize the beacon.
   Future<void> initialize() async {
-    var data = <String, dynamic>{'beaconId': beaconId, 'email': email, 'name': name, 'attribute': attributes};
+    var data = <String, dynamic>{'beaconId': beaconId, 'email': email, 'name': name, 'avatar': avatar, 'attribute': attributes};
 
     try {
       final String result = await _channel.invokeMethod(
