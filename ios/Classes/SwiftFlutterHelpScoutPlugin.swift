@@ -60,7 +60,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     user.name = name
 
     let attributes = arguments["attributes"] as? Dictionary<String, Any>
-    if(let userAttributes = attributes){
+    if attributes != nil {
           for (key, value) in attributes{
               user.addAttribute(withKey: key, value: value)
           }
