@@ -6,7 +6,7 @@ import Beacon
 
 public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "kelvinforteta.dev/flutter_help_scout", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "privilee/flutter_help_scout", binaryMessenger: registrar.messenger())
     let instance = SwiftFlutterHelpScoutPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }
@@ -54,16 +54,15 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
         
     let email = arguments["email"] as? String
     let name = arguments["name"] as? String
-    let company = arguments["company"] as? String
-    let jobTitle = arguments["jobTitle"] as? String
-    let avatar = arguments["avatar"] as? URL
         
     let user = HSBeaconUser()
     user.email = email
     user.name = name
-    // user.company = company
-    // user.jobTitle = jobTitle
-    user.avatar = avatar
+
+    let attributes = arguments["attributes"] as? Dictionary<String, Any>
+    for(key, value) in attributes {
+      user.addAttribute(withKey: key, value: value)
+    }
 
     HSBeacon.login(user)
  }

@@ -4,8 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 class FlutterHelpScout {
-  static const MethodChannel _channel =
-      const MethodChannel('kelvinforteta.dev/flutter_help_scout');
+  static const MethodChannel _channel = const MethodChannel('privilee/flutter_help_scout');
 
   /// This is your beacon ID
   final String beaconId;
@@ -16,33 +15,13 @@ class FlutterHelpScout {
   /// This is the user's email address
   final String email;
 
-  /// This is the user's avatar/photo
-  final String avatar;
+  final Map<String, dynamic> attributes;
 
-  /// This is the user's company
-  final String company;
-
-  /// This is the user's job title
-  final String jobTitle;
-
-  FlutterHelpScout(
-      {this.email = '',
-      this.name = '',
-      @required this.beaconId,
-      this.avatar = '',
-      this.company = '',
-      this.jobTitle = ''});
+  FlutterHelpScout({this.email = '', this.name = '', @required this.beaconId, this.attributes = const {}});
 
   /// This method will initialize the beacon.
   Future<void> initialize() async {
-    var data = <String, dynamic>{
-      'beaconId': beaconId,
-      'email': email,
-      'name': name,
-      'avatar': avatar,
-      'jobTitle': jobTitle,
-      'company': company,
-    };
+    var data = <String, dynamic>{'beaconId': beaconId, 'email': email, 'name': name, 'attribute': attributes};
 
     try {
       final String result = await _channel.invokeMethod(

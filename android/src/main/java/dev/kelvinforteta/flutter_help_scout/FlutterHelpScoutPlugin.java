@@ -38,7 +38,7 @@ public class FlutterHelpScoutPlugin implements FlutterPlugin, MethodCallHandler,
   @Override
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
 
-    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "kelvinforteta.dev/flutter_help_scout");
+    channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "privilee/flutter_help_scout");
     channel.setMethodCallHandler(this);
 
   }
