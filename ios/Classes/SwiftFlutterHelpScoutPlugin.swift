@@ -63,7 +63,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     user.name = name
     // user.company = company
     // user.jobTitle = jobTitle
-    // user.avatar = avatar
+    user.avatar = avatar
 
     HSBeacon.login(user)
  }
