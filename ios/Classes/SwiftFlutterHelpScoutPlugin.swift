@@ -59,7 +59,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     user.email = email
     user.name = name
 
-    let attributes = arguments["attributes"] as? Dictionary<String, Any>
+    let attributes = arguments["attributes"] as? Dictionary<String, String>
     if attributes != nil {
           for (key, value) in attributes!{
               user.addAttribute(withKey: key, value: value)
