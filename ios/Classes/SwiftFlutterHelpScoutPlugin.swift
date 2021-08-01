@@ -62,6 +62,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     let attributes = arguments["attributes"] as? Dictionary<String, String>
     if attributes != nil {
           for (key, value) in attributes!{
+              print("Beacon attribute \(key) -> \(value)")
               user.addAttribute(withKey: key, value: value)
           }
     }
