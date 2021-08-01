@@ -4,7 +4,7 @@ version: 0.0.1+8
 #authors: 
 #  - Kelvin Forteta <hi@kelvinforteta.dev>
   
-homepage: https://github.com/KelvinForteta/flutter_help_scout
+homepage: https://github.com/privilee/flutter_help_scout
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

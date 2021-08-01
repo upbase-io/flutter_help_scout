@@ -61,9 +61,9 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     let user = HSBeaconUser()
     user.email = email
     user.name = name
-    user.company = company
-    user.jobTitle = jobTitle
-    user.avatar = avatar
+    // user.company = company
+    // user.jobTitle = jobTitle
+    // user.avatar = avatar
 
     HSBeacon.identify(user)
  }
