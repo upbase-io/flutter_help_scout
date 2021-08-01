@@ -74,7 +74,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
 
     // open the beacon
   public func openBeacon(beaconId: String){
-    let settings = HSBeaconSettings(beaconId: beaconId, chatEnabled: true)
+    let settings = HSBeaconSettings(beaconId: beaconId, messagingEnabled: true)
     HSBeacon.open(settings)
   }
 
