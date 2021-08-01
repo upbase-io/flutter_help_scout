@@ -65,7 +65,7 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     // user.jobTitle = jobTitle
     // user.avatar = avatar
 
-    HSBeacon.identify(user)
+    HSBeacon.login(user)
  }
 
     // open the beacon
