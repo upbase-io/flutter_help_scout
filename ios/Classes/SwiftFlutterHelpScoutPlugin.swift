@@ -65,6 +65,8 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
               print("Beacon attribute \(key) -> \(value)")
               user.addAttribute(withKey: key, value: value)
           }
+    }else {
+      print("Beacon has no user attributes")
     }
 
     HSBeacon.login(user)
