@@ -77,7 +77,6 @@ public class SwiftFlutterHelpScoutPlugin: NSObject, FlutterPlugin {
     settings.messagingEnabled = true
     settings.chatEnabled = true
     HSBeacon.open(settings)
-    HSBeacon.navigate(BeaconRoute.askChat, settings: settings)
   }
 
   // logout beacon
