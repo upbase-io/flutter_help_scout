@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 
 class FlutterHelpScout {
@@ -15,18 +13,18 @@ class FlutterHelpScout {
   /// This is the user's email address
   final String email;
 
-  final String avatar;
+  final String? avatar;
 
   final Map<String, String> attributes;
 
-  FlutterHelpScout({this.email = '', this.name = '', @required this.beaconId, this.avatar, this.attributes = const {}});
+  FlutterHelpScout({this.email = '', this.name = '', required this.beaconId, this.avatar, this.attributes = const {}});
 
   /// This method will initialize the beacon.
-  Future<void> initialize() async {
+  Future<String?> initialize() async {
     var data = <String, dynamic>{'beaconId': beaconId, 'email': email, 'name': name, 'avatar': avatar, 'attribute': attributes};
 
     try {
-      final String result = await _channel.invokeMethod(
+      final String? result = await _channel.invokeMethod(
         'initialize',
         data,
       );
@@ -41,13 +39,13 @@ class FlutterHelpScout {
   /// Whenever you want to invoke Beacon, use the code below to
   /// display the Beacon user interface.
 
-  Future<void> open({String beaconId}) async {
+  Future<String?> open({String? beaconId}) async {
     var data = <String, dynamic>{
       'beaconId': beaconId,
     };
 
     try {
-      final String result = await _channel.invokeMethod(
+      final String? result = await _channel.invokeMethod(
         'openBeacon',
         data,
       );
@@ -63,9 +61,9 @@ class FlutterHelpScout {
   /// push token and resets the Beacon Device ID. It won’t
   /// remove the Beacon ID, or any local config overrides.
 
-  Future<void> logout() async {
+  Future<String?> logout() async {
     try {
-      final String result = await _channel.invokeMethod(
+      final String? result = await _channel.invokeMethod(
         'logoutBeacon',
       );
 
@@ -79,9 +77,9 @@ class FlutterHelpScout {
   /// including the Beacon ID. This may be useful if
   /// you are using different Beacons in different parts of your app.
 
-  Future<void> clear() async {
+  Future<String?> clear() async {
     try {
-      final String result = await _channel.invokeMethod(
+      final String? result = await _channel.invokeMethod(
         'clearBeacon',
       );
 
