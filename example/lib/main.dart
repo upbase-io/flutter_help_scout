@@ -28,7 +28,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   // create an instance of Flutter Help Scout and pass the beacon ID and other values to it
-  FlutterHelpScout _beacon;
+  late FlutterHelpScout _beacon;
   String beaconId = 'b97ef039-7620-49de-8edc-b4719571a4c7';
 
   // Platform messages are asynchronous, so we initialize in an async method.
