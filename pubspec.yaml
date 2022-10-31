@@ -20,7 +20,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.privilee.flutter_help_scout
+        package: dev.kelvinforteta.flutter_help_scout
         pluginClass: FlutterHelpScoutPlugin
       ios:
         pluginClass: FlutterHelpScoutPlugin
