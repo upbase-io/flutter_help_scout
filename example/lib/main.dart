@@ -37,7 +37,8 @@ class _MyHomePageState extends State<MyHomePage> {
         beaconId: beaconId,
         email: 'example@example.com',
         name: 'John Doe',
-        avatar: 'https://privilee-avatar.imgix.net/dace837051aa/d37e4306-f3d9-44e9-9257-1e6ab34ea10f/original.png');
+        avatar:
+            'https://privilee-avatar.imgix.net/dace837051aa/d37e4306-f3d9-44e9-9257-1e6ab34ea10f/original.png');
 
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
@@ -64,12 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: RaisedButton(
+          child: ElevatedButton(
         child: Text(
           'Open Beacon',
           style: TextStyle(color: Colors.white),
         ),
-        color: Colors.blue,
         onPressed: () {
           _beacon.open(beaconId: beaconId);
         },
