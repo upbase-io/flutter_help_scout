@@ -54,15 +54,15 @@ Future<void> initBeacon() async {
 
 ```
 android {
-...
-compileOptions {
-  sourceCompatibility JavaVersion.VERSION_1_8
-  targetCompatibility JavaVersion.VERSION_1_8
-}
-// For Kotlin projects
-kotlinOptions {
-  jvmTarget = "1.8"
-}
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
+  // For Kotlin projects
+  kotlinOptions {
+    jvmTarget = "1.8"
+  }
 }
 ```
 - The Beacon SDK only needs [Internet permission](https://developer.android.com/training/basics/network-ops/connecting).
