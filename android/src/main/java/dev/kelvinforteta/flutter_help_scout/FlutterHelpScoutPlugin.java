@@ -19,9 +19,6 @@ import io.flutter.plugin.common.MethodChannel.Result;
 import java.util.*;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 
-import io.flutter.plugin.common.PluginRegistry.Registrar;
-
-
 /** FlutterHelpScoutPlugin */
 public class FlutterHelpScoutPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware  {
   /// The MethodChannel that will the communication between Flutter and native Android
