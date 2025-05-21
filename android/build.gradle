@@ -24,6 +24,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 34
+    namespace = "dev.kelvinforteta.flutter_help_scout"
 
     defaultConfig {
         minSdkVersion 21
